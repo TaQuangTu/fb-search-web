@@ -63,6 +63,6 @@ jobs:
         script: |
           cd facebook-search
           echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-          docker compose pull fb-search-website
-          docker compose up -d fb-search-website
+          docker compose pull fb-search-web
+          docker compose up -d fb-search-web
           docker system prune -f
