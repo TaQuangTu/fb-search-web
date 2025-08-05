@@ -57,9 +57,9 @@ jobs:
       if: github.ref == 'refs/heads/main'
       uses: appleboy/ssh-action@v1.0.0
       with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.SSH_KEY }}
+        host: ${{ secrets.HOSTINGER_DEV1_HOST }}
+        username: ${{ secrets.HOSTINGER_DEV1_USERNAME }}
+        key: ${{ secrets.HOSTINGER_DEV1_PRIVATE_KEY }}
         script: |
           cd facebook-search
           echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
