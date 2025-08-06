@@ -49,15 +49,6 @@ __mocks__
 .prettierrc*
 .prettierignore
 
-# TypeScript
-*.tsbuildinfo
-tsconfig.json
-
-# Storybook
-.storybook
-storybook-static
-*.stories.*
-
 # Documentation
 docs
 .github
