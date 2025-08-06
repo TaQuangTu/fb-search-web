@@ -38,11 +38,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Package managers
-yarn.lock
-package-lock.json
-pnpm-lock.yaml*
-
 # IDE / Editor
 .vscode/
 .idea/
