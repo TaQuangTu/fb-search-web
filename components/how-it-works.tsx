@@ -1,6 +1,6 @@
 "use client"
 import { useLanguage } from "@/components/language-provider"
-import { Search, Cog, CheckCircle } from "lucide-react"
+import { Search, Cog, CheckCircle } from 'lucide-react'
 
 export function HowItWorks() {
   const { t } = useLanguage()
@@ -9,17 +9,17 @@ export function HowItWorks() {
     {
       icon: Search,
       title: t("how.step1"),
-      description: "Nhập số điện thoại hoặc Facebook UUID vào ô tìm kiếm",
+      description: t("how.step1.desc"),
     },
     {
       icon: Cog,
       title: t("how.step2"),
-      description: "Hệ thống xử lý thông tin và tìm kiếm trong cơ sở dữ liệu",
+      description: t("how.step2.desc"),
     },
     {
       icon: CheckCircle,
       title: t("how.step3"),
-      description: "Nhận kết quả tìm kiếm chi tiết và chính xác",
+      description: t("how.step3.desc"),
     },
   ]
 
@@ -29,7 +29,7 @@ export function HowItWorks() {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">{t("how.title")}</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Quy trình tìm kiếm đơn giản và hiệu quả chỉ với 3 bước
+            {t("how.subtitle")}
           </p>
         </div>
 
