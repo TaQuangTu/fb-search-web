@@ -32,11 +32,6 @@ DEPLOYMENT.md
 ._*
 Thumbs.db
 
-# Package manager files
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
-
 # Testing
 coverage
 .nyc_output
