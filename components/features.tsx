@@ -7,9 +7,21 @@ import { Zap, Shield, Target, Clock, Globe, Users, Star, TrendingUp, Award } fro
 export function Features() {
   const { t } = useLanguage()
 
+  const getFeatureIcon = (type: string) => {
+    switch(type) {
+      case 'fast': return Zap
+      case 'secure': return Shield
+      case 'accurate': return Target
+      case 'available': return Clock
+      case 'multilang': return Globe
+      case 'free': return Users
+      default: return Zap
+    }
+  }
+
   const features = [
     {
-      icon: Zap,
+      type: 'fast',
       title: t("features.fast.title"),
       description: t("features.fast.desc"),
       color: "from-yellow-400 to-orange-500",
@@ -17,7 +29,7 @@ export function Features() {
       iconColor: "text-yellow-600",
     },
     {
-      icon: Shield,
+      type: 'secure',
       title: t("features.secure.title"),
       description: t("features.secure.desc"),
       color: "from-green-400 to-emerald-500",
@@ -25,7 +37,7 @@ export function Features() {
       iconColor: "text-green-600",
     },
     {
-      icon: Target,
+      type: 'accurate',
       title: t("features.accurate.title"),
       description: t("features.accurate.desc"),
       color: "from-blue-500 to-blue-600", // Changed to explicit blue colors
@@ -33,7 +45,7 @@ export function Features() {
       iconColor: "text-blue-600", // Changed to explicit blue color
     },
     {
-      icon: Clock,
+      type: 'available',
       title: t("features.available.title"),
       description: t("features.available.desc"),
       color: "from-purple-400 to-pink-500",
@@ -41,7 +53,7 @@ export function Features() {
       iconColor: "text-purple-600",
     },
     {
-      icon: Globe,
+      type: 'multilang',
       title: t("features.multilang.title"),
       description: t("features.multilang.desc"),
       color: "from-blue-400 to-blue-600", // Changed to explicit blue colors
@@ -49,7 +61,7 @@ export function Features() {
       iconColor: "text-blue-600", // Changed to explicit blue color
     },
     {
-      icon: Users,
+      type: 'free',
       title: t("features.free.title"),
       description: t("features.free.desc"),
       color: "from-red-400 to-pink-500",
@@ -75,28 +87,31 @@ export function Features() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {features.map((feature, index) => (
-            <Card 
-              key={index} 
-              className="group h-full bg-white shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 border-0 overflow-hidden animate-fade-in"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <div className={`h-2 bg-gradient-to-r ${feature.color}`}></div>
-              <CardHeader className="pb-4">
-                <div className={`h-16 w-16 rounded-2xl ${feature.bgColor} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <feature.icon className={`h-8 w-8 ${feature.iconColor}`} />
-                </div>
-                <CardTitle className="text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
-                  {feature.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base text-gray-600 leading-relaxed">
-                  {feature.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
-          ))}
+          {features.map((feature, index) => {
+            const IconComponent = getFeatureIcon(feature.type)
+            return (
+              <Card 
+                key={index} 
+                className="group h-full bg-white shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 border-0 overflow-hidden animate-fade-in"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className={`h-2 bg-gradient-to-r ${feature.color}`}></div>
+                <CardHeader className="pb-4">
+                  <div className={`h-16 w-16 rounded-2xl ${feature.bgColor} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <IconComponent className={`h-8 w-8 ${feature.iconColor}`} />
+                  </div>
+                  <CardTitle className="text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
+                    {feature.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base text-gray-600 leading-relaxed">
+                    {feature.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            )
+          })}
         </div>
 
         {/* Stats Section */}
