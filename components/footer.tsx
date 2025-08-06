@@ -14,17 +14,17 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
-              <div className="h-12 w-12 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 flex items-center justify-center shadow-lg">
+              <div className="h-12 w-12 rounded-xl bg-gradient-to-r from-primary to-blue-700 flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-xl">FB</span>
               </div>
               <span className="font-bold text-2xl">Facebook Search</span>
             </div>
             <p className="text-gray-300 leading-relaxed">{t("footer.about.desc")}</p>
             <div className="flex space-x-4">
-              <div className="h-10 w-10 rounded-full bg-blue-600 hover:bg-blue-700 flex items-center justify-center cursor-pointer transition-colors duration-300">
+              <div className="h-10 w-10 rounded-full bg-primary hover:bg-blue-700 flex items-center justify-center cursor-pointer transition-colors duration-300">
                 <Facebook className="h-5 w-5" />
               </div>
-              <div className="h-10 w-10 rounded-full bg-blue-400 hover:bg-blue-500 flex items-center justify-center cursor-pointer transition-colors duration-300">
+              <div className="h-10 w-10 rounded-full bg-primary/80 hover:bg-primary flex items-center justify-center cursor-pointer transition-colors duration-300">
                 <Twitter className="h-5 w-5" />
               </div>
               <div className="h-10 w-10 rounded-full bg-red-600 hover:bg-red-700 flex items-center justify-center cursor-pointer transition-colors duration-300">

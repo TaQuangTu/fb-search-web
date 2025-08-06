@@ -12,7 +12,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-blue-50 to-blue-100">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-32 h-32 bg-blue-400/20 rounded-full blur-3xl animate-float"></div>
@@ -24,7 +24,7 @@ export function Hero() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-6xl mx-auto">
           {/* Modern Badge */}
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/80 backdrop-blur-sm border border-blue-200/50 text-blue-600 text-sm font-semibold mb-8 animate-bounce-in shadow-lg">
+          <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/80 backdrop-blur-sm border border-blue-200/50 text-primary text-sm font-semibold mb-8 animate-bounce-in shadow-lg">
             <Sparkles className="w-5 h-5 mr-2 text-yellow-500" />
             {t("hero.badge")}
             <Star className="w-4 h-4 ml-2 text-yellow-500" />
@@ -32,7 +32,7 @@ export function Hero() {
 
           {/* Modern Title */}
           <h1 className="text-5xl lg:text-8xl font-bold tracking-tight mb-8 animate-fade-in">
-            <span className="bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900 bg-clip-text text-transparent leading-tight">
+            <span className="bg-gradient-to-r from-gray-900 via-primary to-gray-900 bg-clip-text text-transparent leading-tight">
               {t("hero.title")}
             </span>
           </h1>
@@ -47,7 +47,7 @@ export function Hero() {
             <Button 
               size="lg" 
               onClick={scrollToSearch} 
-              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-6 px-10 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-0 text-xl h-auto group"
+              className="bg-gradient-to-r from-primary to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-6 px-10 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-0 text-xl h-auto group"
             >
               <Search className="mr-3 h-6 w-6 group-hover:rotate-12 transition-transform duration-300" />
               {t("hero.cta")}
@@ -56,7 +56,7 @@ export function Hero() {
             <Button 
               variant="outline" 
               size="lg"
-              className="bg-white text-blue-600 font-semibold py-6 px-10 rounded-xl shadow-lg hover:shadow-xl border-2 border-blue-200 hover:border-blue-300 hover:bg-blue-50 transform hover:scale-105 transition-all duration-300 text-xl h-auto group"
+              className="bg-white text-primary font-semibold py-6 px-10 rounded-xl shadow-lg hover:shadow-xl border-2 border-primary/30 hover:border-primary/50 hover:bg-primary/5 transform hover:scale-105 transition-all duration-300 text-xl h-auto group"
             >
               <Users className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
               {t("hero.learn_more")}
@@ -66,11 +66,11 @@ export function Hero() {
           {/* Modern Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 animate-fade-in" style={{ animationDelay: '0.6s' }}>
             <div className="text-center group">
-              <div className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-3">1M+</div>
+              <div className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary to-blue-700 bg-clip-text text-transparent mb-3">1M+</div>
               <div className="text-gray-600 font-medium text-lg">{t("hero.stats.searches")}</div>
             </div>
             <div className="text-center group">
-              <div className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-3">99.9%</div>
+              <div className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-green-600 to-primary bg-clip-text text-transparent mb-3">99.9%</div>
               <div className="text-gray-600 font-medium text-lg">{t("hero.stats.accuracy")}</div>
             </div>
             <div className="text-center group">
@@ -85,7 +85,7 @@ export function Hero() {
               <div className="h-20 w-20 rounded-3xl bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
                 <Zap className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">{t("features.fast.title")}</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-800 group-hover:text-primary transition-colors duration-300">{t("features.fast.title")}</h3>
               <p className="text-gray-600 leading-relaxed text-lg">{t("features.fast.desc")}</p>
             </div>
 
@@ -93,15 +93,15 @@ export function Hero() {
               <div className="h-20 w-20 rounded-3xl bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
                 <Shield className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">{t("features.secure.title")}</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-800 group-hover:text-primary transition-colors duration-300">{t("features.secure.title")}</h3>
               <p className="text-gray-600 leading-relaxed text-lg">{t("features.secure.desc")}</p>
             </div>
 
             <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden p-8 hover:-translate-y-4">
-              <div className="h-20 w-20 rounded-3xl bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
+              <div className="h-20 w-20 rounded-3xl bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
                 <Globe className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">{t("features.accurate.title")}</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-800 group-hover:text-primary transition-colors duration-300">{t("features.accurate.title")}</h3>
               <p className="text-gray-600 leading-relaxed text-lg">{t("features.accurate.desc")}</p>
             </div>
           </div>

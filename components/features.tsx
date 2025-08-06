@@ -28,9 +28,9 @@ export function Features() {
       icon: Target,
       title: t("features.accurate.title"),
       description: t("features.accurate.desc"),
-      color: "from-blue-400 to-primary",
-      bgColor: "bg-blue-50",
-      iconColor: "text-blue-600",
+      color: "from-blue-500 to-blue-600", // Changed to explicit blue colors
+      bgColor: "bg-blue-50", // Using a light blue shade
+      iconColor: "text-blue-600", // Changed to explicit blue color
     },
     {
       icon: Clock,
@@ -44,9 +44,9 @@ export function Features() {
       icon: Globe,
       title: t("features.multilang.title"),
       description: t("features.multilang.desc"),
-      color: "from-indigo-400 to-blue-500",
-      bgColor: "bg-indigo-50",
-      iconColor: "text-indigo-600",
+      color: "from-blue-400 to-blue-600", // Changed to explicit blue colors
+      bgColor: "bg-blue-50", // Using a light blue shade
+      iconColor: "text-blue-600", // Changed to explicit blue color
     },
     {
       icon: Users,
@@ -59,10 +59,10 @@ export function Features() {
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-b from-blue-50/30 to-white">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 text-blue-600 text-sm font-medium mb-6">
             <Star className="w-4 h-4 mr-2" />
             {t("features.badge")}
           </div>
@@ -78,7 +78,7 @@ export function Features() {
           {features.map((feature, index) => (
             <Card 
               key={index} 
-              className="group h-full shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 border-0 overflow-hidden animate-fade-in"
+              className="group h-full bg-white shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 border-0 overflow-hidden animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className={`h-2 bg-gradient-to-r ${feature.color}`}></div>
@@ -86,7 +86,7 @@ export function Features() {
                 <div className={`h-16 w-16 rounded-2xl ${feature.bgColor} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <feature.icon className={`h-8 w-8 ${feature.iconColor}`} />
                 </div>
-                <CardTitle className="text-xl font-bold text-gray-800 group-hover:text-primary transition-colors duration-300">
+                <CardTitle className="text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
                   {feature.title}
                 </CardTitle>
               </CardHeader>
@@ -108,10 +108,10 @@ export function Features() {
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="text-center group">
-              <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <TrendingUp className="h-8 w-8 text-white" />
               </div>
-              <div className="text-4xl font-bold text-primary mb-2">1M+</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">1M+</div>
               <div className="text-gray-600 font-medium">{t("features.stats.searches")}</div>
             </div>
             

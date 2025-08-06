@@ -104,10 +104,10 @@ export function SearchForm() {
   }
 
   return (
-    <section id="search-section" className="py-24 bg-gradient-to-b from-white via-slate-50 to-blue-50">
+    <section id="search-section" className="py-24 bg-gradient-to-b from-white via-blue-50 to-blue-100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 text-blue-600 text-sm font-medium mb-6">
             <Search className="w-4 h-4 mr-2" />
             {t("search.badge")}
           </div>
@@ -145,13 +145,13 @@ export function SearchForm() {
                 <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-1">
                   <div className="bg-white rounded-t-lg">
                     <CardHeader className="pb-4">
-                      <CardTitle className="text-2xl flex items-center gap-3">
-                        <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                          <Phone className="h-5 w-5 text-primary" />
+                      <CardTitle className="text-2xl flex items-center gap-3 text-gray-800">
+                        <div className="h-10 w-10 rounded-xl bg-blue-50 flex items-center justify-center">
+                          <Phone className="h-5 w-5 text-blue-600" />
                         </div>
                         {t("search.phone.title")}
                       </CardTitle>
-                      <CardDescription className="text-lg">
+                      <CardDescription className="text-lg text-gray-600">
                         {t("search.phone.description")}
                       </CardDescription>
                     </CardHeader>
@@ -165,7 +165,7 @@ export function SearchForm() {
                         value={phoneQuery}
                         onChange={(e) => setPhoneQuery(e.target.value)}
                         onKeyPress={(e) => e.key === "Enter" && handlePhoneSearch()}
-                        className="h-16 text-lg pl-12 border-2 border-gray-200 focus:border-primary transition-colors duration-300 rounded-xl"
+                        className="h-16 text-lg pl-12 border-2 border-gray-200 focus:border-blue-600 transition-colors duration-300 rounded-xl bg-white text-gray-900 placeholder:text-gray-500"
                       />
                       <Phone className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                     </div>
@@ -192,7 +192,7 @@ export function SearchForm() {
                       </div>
                       <div className="grid gap-4">
                         {phoneResults.map((result, index) => (
-                          <Card key={result.id} className="p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-l-primary animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                          <Card key={result.id} className="p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-l-blue-600 animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                               <div className="flex items-center gap-3">
                                 <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center">
@@ -204,7 +204,7 @@ export function SearchForm() {
                                 </div>
                               </div>
                               <div className="flex items-center gap-3">
-                                <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
+                                <div className="h-10 w-10 rounded-full bg-blue-50 flex items-center justify-center">
                                   <User className="h-5 w-5 text-blue-600" />
                                 </div>
                                 <div>
@@ -244,13 +244,13 @@ export function SearchForm() {
                 <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-1">
                   <div className="bg-white rounded-t-lg">
                     <CardHeader className="pb-4">
-                      <CardTitle className="text-2xl flex items-center gap-3">
-                        <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                          <User className="h-5 w-5 text-primary" />
+                      <CardTitle className="text-2xl flex items-center gap-3 text-gray-800">
+                        <div className="h-10 w-10 rounded-xl bg-blue-50 flex items-center justify-center">
+                          <User className="h-5 w-5 text-blue-600" />
                         </div>
                         {t("search.uuid.title")}
                       </CardTitle>
-                      <CardDescription className="text-lg">
+                      <CardDescription className="text-lg text-gray-600">
                         {t("search.uuid.description")}
                       </CardDescription>
                     </CardHeader>
@@ -264,7 +264,7 @@ export function SearchForm() {
                         value={uuidQuery}
                         onChange={(e) => setUuidQuery(e.target.value)}
                         onKeyPress={(e) => e.key === "Enter" && handleUuidSearch()}
-                        className="h-16 text-lg pl-12 border-2 border-gray-200 focus:border-primary transition-colors duration-300 rounded-xl"
+                        className="h-16 text-lg pl-12 border-2 border-gray-200 focus:border-blue-600 transition-colors duration-300 rounded-xl bg-white text-gray-900 placeholder:text-gray-500"
                       />
                       <User className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                     </div>
@@ -291,10 +291,10 @@ export function SearchForm() {
                       </div>
                       <div className="grid gap-4">
                         {uuidResults.map((result, index) => (
-                          <Card key={result.id} className="p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-l-primary animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                          <Card key={result.id} className="p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-l-blue-600 animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                               <div className="flex items-center gap-3">
-                                <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
+                                <div className="h-10 w-10 rounded-full bg-blue-50 flex items-center justify-center">
                                   <User className="h-5 w-5 text-blue-600" />
                                 </div>
                                 <div>
@@ -316,7 +316,7 @@ export function SearchForm() {
                                   <Calendar className="h-5 w-5 text-purple-600" />
                                 </div>
                                 <div>
-                                  <div className="text-sm text-gray-500 mb-1">{t("search.labels.time")}</div>
+                                  <div className="text-sm font-medium">{t("search.labels.time")}</div>
                                   <div className="text-sm font-medium">{formatDate(result.created_at)}</div>
                                 </div>
                               </div>

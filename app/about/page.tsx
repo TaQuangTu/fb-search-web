@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Shield, Target, Users, Zap } from "lucide-react"
+import { Shield, Target, Users, Zap } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: "Giới Thiệu | About Us",
