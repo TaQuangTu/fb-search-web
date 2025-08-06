@@ -193,8 +193,3 @@ temp/
 *.db
 *.sqlite
 *.sqlite3
-
-# Docker
-.dockerignore
-Dockerfile*
-docker-compose*
