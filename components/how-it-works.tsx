@@ -28,7 +28,7 @@ export function HowItWorks() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">{t("how.title")}</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base text-muted-foreground max-w-2xl mx-auto">
             {t("how.subtitle")}
           </p>
         </div>
@@ -44,8 +44,8 @@ export function HowItWorks() {
                   {index + 1}
                 </div>
               </div>
-              <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
-              <p className="text-muted-foreground">{step.description}</p>
+              <h3 className="text-lg font-semibold mb-3">{step.title}</h3>
+              <p className="text-sm text-muted-foreground">{step.description}</p>
             </div>
           ))}
         </div>

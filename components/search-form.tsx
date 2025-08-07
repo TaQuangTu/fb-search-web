@@ -107,14 +107,14 @@ export function SearchForm() {
     <section id="search-section" className="py-24 bg-gradient-to-b from-white via-blue-50 to-blue-100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 text-blue-600 text-sm font-medium mb-6">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
             <Search className="w-4 h-4 mr-2" />
             {t("search.badge")}
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-800">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-gray-800">
             {t("search.title")}
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             {t("search.subtitle")}
           </p>
         </div>
@@ -124,7 +124,7 @@ export function SearchForm() {
             <TabsList className="grid w-full grid-cols-2 mb-8 bg-white shadow-lg p-2 h-auto">
               <TabsTrigger 
                 value="phone" 
-                className="flex items-center gap-3 py-4 px-8 text-lg font-semibold data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:text-blue-600 transition-all duration-300 rounded-xl"
+                className="flex items-center gap-3 py-4 px-8 text-base font-semibold data-[state=active]:bg-primary data-[state=active]:text-white data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:text-primary transition-all duration-300 rounded-xl"
               >
                 <Phone className="h-5 w-5" />
                 <span className="hidden sm:inline">Phone → UUID</span>
@@ -132,7 +132,7 @@ export function SearchForm() {
               </TabsTrigger>
               <TabsTrigger 
                 value="uuid" 
-                className="flex items-center gap-3 py-4 px-8 text-lg font-semibold data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:text-blue-600 transition-all duration-300 rounded-xl"
+                className="flex items-center gap-3 py-4 px-8 text-base font-semibold data-[state=active]:bg-primary data-[state=active]:text-white data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:text-primary transition-all duration-300 rounded-xl"
               >
                 <User className="h-5 w-5" />
                 <span className="hidden sm:inline">UUID → Phone</span>
@@ -142,16 +142,16 @@ export function SearchForm() {
 
             <TabsContent value="phone" className="space-y-8 animate-fade-in">
               <Card className="bg-white rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 border-0 overflow-hidden">
-                <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-1">
+                <div className="bg-gradient-to-r from-primary to-blue-700 p-1">
                   <div className="bg-white rounded-t-lg">
                     <CardHeader className="pb-4">
-                      <CardTitle className="text-2xl flex items-center gap-3 text-gray-800">
-                        <div className="h-10 w-10 rounded-xl bg-blue-50 flex items-center justify-center">
-                          <Phone className="h-5 w-5 text-blue-600" />
+                      <CardTitle className="text-xl flex items-center gap-3">
+                        <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                          <Phone className="h-5 w-5 text-primary" />
                         </div>
                         {t("search.phone.title")}
                       </CardTitle>
-                      <CardDescription className="text-lg text-gray-600">
+                      <CardDescription className="text-base">
                         {t("search.phone.description")}
                       </CardDescription>
                     </CardHeader>
@@ -165,14 +165,14 @@ export function SearchForm() {
                         value={phoneQuery}
                         onChange={(e) => setPhoneQuery(e.target.value)}
                         onKeyPress={(e) => e.key === "Enter" && handlePhoneSearch()}
-                        className="h-16 text-lg pl-12 border-2 border-gray-200 focus:border-blue-600 transition-colors duration-300 rounded-xl bg-white text-gray-900 placeholder:text-gray-500"
+                        className="h-14 text-base pl-12 border-2 border-gray-200 focus:border-primary transition-colors duration-300 rounded-xl"
                       />
                       <Phone className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                     </div>
                     <Button 
                       onClick={handlePhoneSearch} 
                       disabled={isPhoneLoading}
-                      className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-4 px-10 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-0 text-lg h-16"
+                      className="bg-gradient-to-r from-primary to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-0 text-base h-14"
                     >
                       {isPhoneLoading ? (
                         <Loader2 className="h-5 w-5 animate-spin mr-2" />
@@ -192,7 +192,7 @@ export function SearchForm() {
                       </div>
                       <div className="grid gap-4">
                         {phoneResults.map((result, index) => (
-                          <Card key={result.id} className="p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-l-blue-600 animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                          <Card key={result.id} className="p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-l-primary animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                               <div className="flex items-center gap-3">
                                 <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center">
@@ -200,16 +200,16 @@ export function SearchForm() {
                                 </div>
                                 <div>
                                   <div className="text-sm text-gray-500 mb-1">{t("search.labels.phone")}</div>
-                                  <div className="font-mono text-lg font-semibold">{result.phone}</div>
+                                  <div className="font-mono text-base font-semibold">{result.phone}</div>
                                 </div>
                               </div>
                               <div className="flex items-center gap-3">
-                                <div className="h-10 w-10 rounded-full bg-blue-50 flex items-center justify-center">
-                                  <User className="h-5 w-5 text-blue-600" />
+                                <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
+                                  <User className="h-5 w-5 text-primary" />
                                 </div>
                                 <div>
                                   <div className="text-sm text-gray-500 mb-1">{t("search.labels.uuid")}</div>
-                                  <div className="font-mono text-lg font-semibold">{result.fbuid}</div>
+                                  <div className="font-mono text-base font-semibold">{result.fbuid}</div>
                                 </div>
                               </div>
                               <div className="flex items-center gap-3">
@@ -217,8 +217,8 @@ export function SearchForm() {
                                   <Calendar className="h-5 w-5 text-purple-600" />
                                 </div>
                                 <div>
-                                  <div className="text-sm text-gray-500 mb-1">{t("search.labels.time")}</div>
-                                  <div className="text-sm font-medium">{formatDate(result.created_at)}</div>
+                                  <div className="text-xs font-medium">{t("search.labels.time")}</div>
+                                  <div className="text-xs font-medium">{formatDate(result.created_at)}</div>
                                 </div>
                               </div>
                             </div>
@@ -231,8 +231,8 @@ export function SearchForm() {
                   {phoneResults.length === 0 && phoneQuery && !isPhoneLoading && (
                     <div className="text-center py-12 animate-fade-in">
                       <AlertCircle className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-                      <h3 className="text-xl font-semibold text-gray-600 mb-2">{t("search.no_results")}</h3>
-                      <p className="text-gray-500">{t("search.no_results_desc")}</p>
+                      <h3 className="text-lg font-semibold text-gray-600 mb-2">{t("search.no_results")}</h3>
+                      <p className="text-base text-gray-500">{t("search.no_results_desc")}</p>
                     </div>
                   )}
                 </CardContent>
@@ -241,16 +241,16 @@ export function SearchForm() {
 
             <TabsContent value="uuid" className="space-y-8 animate-fade-in">
               <Card className="bg-white rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 border-0 overflow-hidden">
-                <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-1">
+                <div className="bg-gradient-to-r from-primary to-blue-700 p-1">
                   <div className="bg-white rounded-t-lg">
                     <CardHeader className="pb-4">
-                      <CardTitle className="text-2xl flex items-center gap-3 text-gray-800">
-                        <div className="h-10 w-10 rounded-xl bg-blue-50 flex items-center justify-center">
-                          <User className="h-5 w-5 text-blue-600" />
+                      <CardTitle className="text-xl flex items-center gap-3">
+                        <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                          <User className="h-5 w-5 text-primary" />
                         </div>
                         {t("search.uuid.title")}
                       </CardTitle>
-                      <CardDescription className="text-lg text-gray-600">
+                      <CardDescription className="text-base">
                         {t("search.uuid.description")}
                       </CardDescription>
                     </CardHeader>
@@ -264,14 +264,14 @@ export function SearchForm() {
                         value={uuidQuery}
                         onChange={(e) => setUuidQuery(e.target.value)}
                         onKeyPress={(e) => e.key === "Enter" && handleUuidSearch()}
-                        className="h-16 text-lg pl-12 border-2 border-gray-200 focus:border-blue-600 transition-colors duration-300 rounded-xl bg-white text-gray-900 placeholder:text-gray-500"
+                        className="h-14 text-base pl-12 border-2 border-gray-200 focus:border-primary transition-colors duration-300 rounded-xl"
                       />
                       <User className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                     </div>
                     <Button 
                       onClick={handleUuidSearch} 
                       disabled={isUuidLoading}
-                      className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-4 px-10 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-0 text-lg h-16"
+                      className="bg-gradient-to-r from-primary to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-0 text-base h-14"
                     >
                       {isUuidLoading ? (
                         <Loader2 className="h-5 w-5 animate-spin mr-2" />
@@ -291,15 +291,15 @@ export function SearchForm() {
                       </div>
                       <div className="grid gap-4">
                         {uuidResults.map((result, index) => (
-                          <Card key={result.id} className="p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-l-blue-600 animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                          <Card key={result.id} className="p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-l-primary animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                               <div className="flex items-center gap-3">
-                                <div className="h-10 w-10 rounded-full bg-blue-50 flex items-center justify-center">
-                                  <User className="h-5 w-5 text-blue-600" />
+                                <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
+                                  <User className="h-5 w-5 text-primary" />
                                 </div>
                                 <div>
                                   <div className="text-sm text-gray-500 mb-1">{t("search.labels.uuid")}</div>
-                                  <div className="font-mono text-lg font-semibold">{result.fbuid}</div>
+                                  <div className="font-mono text-base font-semibold">{result.fbuid}</div>
                                 </div>
                               </div>
                               <div className="flex items-center gap-3">
@@ -308,7 +308,7 @@ export function SearchForm() {
                                 </div>
                                 <div>
                                   <div className="text-sm text-gray-500 mb-1">{t("search.labels.phone")}</div>
-                                  <div className="font-mono text-lg font-semibold">{result.phone}</div>
+                                  <div className="font-mono text-base font-semibold">{result.phone}</div>
                                 </div>
                               </div>
                               <div className="flex items-center gap-3">
@@ -316,8 +316,8 @@ export function SearchForm() {
                                   <Calendar className="h-5 w-5 text-purple-600" />
                                 </div>
                                 <div>
-                                  <div className="text-sm font-medium">{t("search.labels.time")}</div>
-                                  <div className="text-sm font-medium">{formatDate(result.created_at)}</div>
+                                  <div className="text-xs font-medium">{t("search.labels.time")}</div>
+                                  <div className="text-xs font-medium">{formatDate(result.created_at)}</div>
                                 </div>
                               </div>
                             </div>
@@ -330,8 +330,8 @@ export function SearchForm() {
                   {uuidResults.length === 0 && uuidQuery && !isUuidLoading && (
                     <div className="text-center py-12 animate-fade-in">
                       <AlertCircle className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-                      <h3 className="text-xl font-semibold text-gray-600 mb-2">{t("search.no_results")}</h3>
-                      <p className="text-gray-500">{t("search.no_results_desc")}</p>
+                      <h3 className="text-lg font-semibold text-gray-600 mb-2">{t("search.no_results")}</h3>
+                      <p className="text-base text-gray-500">{t("search.no_results_desc")}</p>
                     </div>
                   )}
                 </CardContent>

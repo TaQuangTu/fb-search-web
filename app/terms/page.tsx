@@ -9,9 +9,9 @@ export default function TermsPage() {
   return (
     <div className="container mx-auto px-4 py-16">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8">Điều Khoản Sử Dụng</h1>
-        <div className="prose prose-lg max-w-none">
-          <p className="text-muted-foreground mb-8">Cập nhật lần cuối: {new Date().toLocaleDateString("vi-VN")}</p>
+        <h1 className="text-3xl font-bold mb-8">Điều Khoản Sử Dụng</h1>
+        <div className="prose prose-base max-w-none">
+          <p className="text-base text-muted-foreground mb-8">Cập nhật lần cuối: {new Date().toLocaleDateString("vi-VN")}</p>
 
           <h2>1. Chấp Nhận Điều Khoản</h2>
           <p>

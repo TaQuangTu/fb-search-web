@@ -31,14 +31,14 @@ export function Hero() {
           </div>
 
           {/* Modern Title */}
-          <h1 className="text-5xl lg:text-8xl font-bold tracking-tight mb-8 animate-fade-in">
+          <h1 className="text-5xl lg:text-7xl font-bold tracking-tight mb-8 animate-fade-in">
             <span className="bg-gradient-to-r from-gray-900 via-primary to-gray-900 bg-clip-text text-transparent leading-tight">
               {t("hero.title")}
             </span>
           </h1>
 
           {/* Enhanced Subtitle */}
-          <p className="text-xl lg:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in font-medium" style={{ animationDelay: '0.2s' }}>
+          <p className="text-lg lg:text-xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in font-medium" style={{ animationDelay: '0.2s' }}>
             {t("hero.subtitle")}
           </p>
 
@@ -66,7 +66,7 @@ export function Hero() {
           {/* Modern Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 animate-fade-in" style={{ animationDelay: '0.6s' }}>
             <div className="text-center group">
-              <div className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary to-blue-700 bg-clip-text text-transparent mb-3">1M+</div>
+              <div className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent mb-3">1M+</div>
               <div className="text-gray-600 font-medium text-lg">{t("hero.stats.searches")}</div>
             </div>
             <div className="text-center group">
@@ -85,24 +85,24 @@ export function Hero() {
               <div className="h-20 w-20 rounded-3xl bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
                 <Zap className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-800 group-hover:text-primary transition-colors duration-300">{t("features.fast.title")}</h3>
-              <p className="text-gray-600 leading-relaxed text-lg">{t("features.fast.desc")}</p>
+              <h3 className="text-xl font-bold mb-4 text-gray-800 group-hover:text-primary transition-colors duration-300">{t("features.fast.title")}</h3>
+              <p className="text-base text-gray-600 leading-relaxed">{t("features.fast.desc")}</p>
             </div>
 
             <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden p-8 hover:-translate-y-4">
               <div className="h-20 w-20 rounded-3xl bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
                 <Shield className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-800 group-hover:text-primary transition-colors duration-300">{t("features.secure.title")}</h3>
-              <p className="text-gray-600 leading-relaxed text-lg">{t("features.secure.desc")}</p>
+              <h3 className="text-xl font-bold mb-4 text-gray-800 group-hover:text-primary transition-colors duration-300">{t("features.secure.title")}</h3>
+              <p className="text-base text-gray-600 leading-relaxed">{t("features.secure.desc")}</p>
             </div>
 
             <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden p-8 hover:-translate-y-4">
-              <div className="h-20 w-20 rounded-3xl bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
+              <div className="h-20 w-20 rounded-3xl bg-gradient-to-br from-primary to-purple-500 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
                 <Globe className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-800 group-hover:text-primary transition-colors duration-300">{t("features.accurate.title")}</h3>
-              <p className="text-gray-600 leading-relaxed text-lg">{t("features.accurate.desc")}</p>
+              <h3 className="text-xl font-bold mb-4 text-gray-800 group-hover:text-primary transition-colors duration-300">{t("features.accurate.title")}</h3>
+              <p className="text-base text-gray-600 leading-relaxed">{t("features.accurate.desc")}</p>
             </div>
           </div>
         </div>
