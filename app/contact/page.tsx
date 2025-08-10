@@ -69,9 +69,9 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-2">Hỗ trợ chung:</p>
-                <p className="font-medium text-base">support@example.com</p>
+                <p className="font-medium text-base">support@fbsearch.net</p>
                 <p className="text-sm text-muted-foreground mb-2 mt-4">Hỗ trợ kỹ thuật:</p>
-                <p className="font-medium text-base">tech@example.com</p>
+                <p className="font-medium text-base">tech@fbsearch.net</p>
               </CardContent>
             </Card>
 
@@ -84,9 +84,9 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-2">Hotline:</p>
-                <p className="font-medium text-base">+84 123 456 789</p>
+                <p className="font-medium text-base">+84 965 888 888</p>
                 <p className="text-sm text-muted-foreground mb-2 mt-4">Hỗ trợ kỹ thuật:</p>
-                <p className="font-medium text-base">+84 987 654 321</p>
+                <p className="font-medium text-base">+84 965 888 888</p>
               </CardContent>
             </Card>
 

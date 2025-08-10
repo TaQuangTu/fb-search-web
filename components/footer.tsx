@@ -78,15 +78,15 @@ export function Footer() {
             <div className="space-y-4">
               <div className="flex items-center text-gray-300">
                 <Mail className="h-5 w-5 mr-3 text-primary" />
-                <span>support@example.com</span>
+                <span>support@fbsearch.net</span>
               </div>
               <div className="flex items-center text-gray-300">
                 <Phone className="h-5 w-5 mr-3 text-primary" />
-                <span>+84 123 456 789</span>
+                <span>+84 965 888 888</span>
               </div>
               <div className="flex items-start text-gray-300">
                 <MapPin className="h-5 w-5 mr-3 text-primary mt-1" />
-                <span>123 Đường Nguyễn Huệ<br />Quận 1, TP.HCM</span>
+                <span>The Office Building, Quận 1, TP.HCM</span>
               </div>
             </div>
           </div>

@@ -9,7 +9,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { LanguageProvider } from "@/components/language-provider"
 import { GoogleAnalytics } from '@next/third-parties/google'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin", "vietnamese"],
   weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap"
@@ -17,10 +17,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Facebook Search Tool - Tìm Kiếm Facebook UUID & Số Điện Thoại",
+    default: "Facebook Search Tool - Tìm Kiếm Facebook & Số Điện Thoại",
     template: "%s | Facebook Search Tool",
   },
-  description: "Công cụ tìm kiếm Facebook UUID từ số điện thoại và ngược lại. Nhanh chóng, chính xác và bảo mật.",
+  description: "Công cụ tìm kiếm Facebook từ số điện thoại và ngược lại. Nhanh chóng, chính xác và bảo mật.",
   keywords: "facebook uuid, phone number search, facebook search, tìm kiếm facebook, uuid lookup, social media tools",
   authors: [{ name: "Facebook Search Tool" }],
   creator: "Facebook Search Tool",
@@ -36,10 +36,15 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
   verification: {
     google: "your-google-verification-code",
   },
-    generator: 'fbsearch.net'
+  generator: 'fbsearch.net'
 }
 
 export default function RootLayout({

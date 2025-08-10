@@ -52,6 +52,7 @@ const translations = {
     "search.success_desc": "Tìm thấy {count} kết quả",
     "search.labels.phone": "Số điện thoại",
     "search.labels.uuid": "Facebook UUID",
+    "search.labels.profile": "Facebook URL",
     "search.labels.time": "Thời gian",
 
     // Features
@@ -109,7 +110,7 @@ const translations = {
     "footer.links": "Liên Kết Hữu Ích",
     "footer.legal": "Pháp Lý",
     "footer.contact.title": "Liên Hệ",
-    "footer.contact.email": "Email: support@example.com",
+    "footer.contact.email": "Email: support@fbsearch.net",
     "footer.rights": "© 2024 Facebook Search Tool. Tất cả quyền được bảo lưu.",
     "footer.made_with_love": "Được tạo với ❤️ tại Việt Nam",
   },
@@ -158,7 +159,7 @@ const translations = {
 
     // Features
     "features.title": "Key Features",
-    "features.subtitle": "Discover the powerful features of Vietnam's leading Facebook UUID and phone number search tool",
+    "features.subtitle": "Discover the powerful features of Vietnam's leading Facebook and phone number search tool",
     "features.badge": "Outstanding features",
     "features.fast.title": "Fast Search",
     "features.fast.desc": "Get results in seconds",
@@ -207,11 +208,11 @@ const translations = {
 
     // Footer
     "footer.about": "About Us",
-    "footer.about.desc": "Leading Facebook UUID and phone number search tool, providing fast and accurate services.",
+    "footer.about.desc": "Leading Facebook and phone number search tool, providing fast and accurate services.",
     "footer.links": "Useful Links",
     "footer.legal": "Legal",
     "footer.contact.title": "Contact",
-    "footer.contact.email": "Email: support@example.com",
+    "footer.contact.email": "Email: support@fbsearch.net",
     "footer.rights": "© 2024 Facebook Search Tool. All rights reserved.",
     "footer.made_with_love": "Made with ❤️ in Vietnam",
   },

@@ -103,6 +103,10 @@ export function SearchForm() {
     return new Date(dateString).toLocaleString("vi-VN")
   }
 
+  const getFacebookUrl = (uuid: string) => {
+    return `https://facebook.com/${uuid}`
+  }
+
   return (
     <section id="search-section" className="py-24 bg-gradient-to-b from-white via-blue-50 to-blue-100">
       <div className="container mx-auto px-4">
@@ -208,8 +212,15 @@ export function SearchForm() {
                                   <User className="h-5 w-5 text-primary" />
                                 </div>
                                 <div>
-                                  <div className="text-sm text-gray-500 mb-1">{t("search.labels.uuid")}</div>
-                                  <div className="font-mono text-base font-semibold">{result.fbuid}</div>
+                                  <div className="text-sm text-gray-500 mb-1">{t("search.labels.profile")}</div>
+                                  <a 
+                                    href={getFacebookUrl(result.fbuid)}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="font-mono text-base font-semibold text-primary hover:text-blue-700 hover:underline"
+                                  >
+                                    {getFacebookUrl(result.fbuid)}
+                                  </a>
                                 </div>
                               </div>
                               <div className="flex items-center gap-3">
@@ -298,8 +309,15 @@ export function SearchForm() {
                                   <User className="h-5 w-5 text-primary" />
                                 </div>
                                 <div>
-                                  <div className="text-sm text-gray-500 mb-1">{t("search.labels.uuid")}</div>
-                                  <div className="font-mono text-base font-semibold">{result.fbuid}</div>
+                                  <div className="text-sm text-gray-500 mb-1">{t("search.labels.profile")}</div>
+                                  <a 
+                                    href={getFacebookUrl(result.fbuid)}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="font-mono text-base font-semibold text-primary hover:text-blue-700 hover:underline"
+                                  >
+                                    {getFacebookUrl(result.fbuid)}
+                                  </a>
                                 </div>
                               </div>
                               <div className="flex items-center gap-3">
