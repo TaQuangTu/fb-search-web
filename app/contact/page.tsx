@@ -100,7 +100,7 @@ export default function ContactPage() {
               <CardContent>
                 <p className="font-medium text-base">Facebook Search Tool</p>
                 <p className="text-sm text-muted-foreground">
-                  123 Đường Nguyễn Huệ
+                  The Office Building
                   <br />
                   Quận 1, TP. Hồ Chí Minh
                   <br />
