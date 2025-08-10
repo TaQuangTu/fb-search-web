@@ -7,6 +7,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Toaster } from "@/components/ui/toaster"
 import { LanguageProvider } from "@/components/language-provider"
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const inter = Inter({ 
   subsets: ["latin", "vietnamese"],
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
   verification: {
     google: "your-google-verification-code",
   },
-    generator: 'v0.dev'
+    generator: 'fbsearch.net'
 }
 
 export default function RootLayout({
@@ -49,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="vi" suppressHydrationWarning>
       <head>
-        <link rel="canonical" href="https://yourdomain.com" />
+        <link rel="canonical" href="https://fbsearch.com" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className={inter.className}>
@@ -64,6 +65,7 @@ export default function RootLayout({
           </LanguageProvider>
         </ThemeProvider>
       </body>
+      <GoogleAnalytics gaId="G-GSXZBMWVSS" />
     </html>
   )
 }
