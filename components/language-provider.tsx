@@ -20,8 +20,8 @@ const translations = {
     "nav.contact": "Liên Hệ",
 
     // Hero
-    "hero.title": "Tìm Kiếm Facebook UUID & Số Điện Thoại",
-    "hero.subtitle": "Công cụ tìm kiếm nhanh chóng và chính xác giữa Facebook UUID và số điện thoại",
+    "hero.title": "Tìm Kiếm Facebook & Số Điện Thoại",
+    "hero.subtitle": "Công cụ tìm kiếm nhanh chóng và chính xác giữa Facebook và số điện thoại",
     "hero.cta": "Bắt Đầu Tìm Kiếm",
     "hero.badge": "Công cụ tìm kiếm #1 Việt Nam",
     "hero.learn_more": "Tìm hiểu thêm",
@@ -33,8 +33,8 @@ const translations = {
     "search.title": "Công Cụ Tìm Kiếm",
     "search.subtitle": "Tìm kiếm thông tin Facebook một cách nhanh chóng và chính xác",
     "search.badge": "Công cụ tìm kiếm chuyên nghiệp",
-    "search.phone.title": "Tìm Facebook UUID từ Số Điện Thoại",
-    "search.phone.description": "Nhập số điện thoại để tìm Facebook UUID tương ứng",
+    "search.phone.title": "Tìm Facebook từ Số Điện Thoại",
+    "search.phone.description": "Nhập số điện thoại để tìm Facebook tương ứng",
     "search.phone.placeholder": "Nhập số điện thoại (VD: 0965656565)",
     "search.uuid.title": "Tìm Số Điện Thoại từ Facebook UUID",
     "search.uuid.description": "Nhập Facebook UUID để tìm số điện thoại tương ứng",

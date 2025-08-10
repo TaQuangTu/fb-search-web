@@ -22,7 +22,7 @@ export default function TermsPage() {
 
           <h2>2. Mô Tả Dịch Vụ</h2>
           <p>
-            Facebook Search Tool cung cấp dịch vụ tìm kiếm thông tin giữa Facebook UUID và số điện thoại. Dịch vụ được
+            Facebook Search Tool cung cấp dịch vụ tìm kiếm thông tin giữa Facebook và số điện thoại. Dịch vụ được
             cung cấp "như hiện tại" và chúng tôi có quyền thay đổi, tạm ngừng hoặc chấm dứt dịch vụ bất kỳ lúc nào.
           </p>
 

@@ -4,7 +4,7 @@ import { Shield, Target, Users, Zap } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: "Giới Thiệu | About Us",
-  description: "Tìm hiểu về Facebook Search Tool - công cụ tìm kiếm Facebook UUID và số điện thoại hàng đầu.",
+  description: "Tìm hiểu về Facebook Search Tool - công cụ tìm kiếm Facebook và số điện thoại hàng đầu.",
 }
 
 export default function AboutPage() {
@@ -14,14 +14,14 @@ export default function AboutPage() {
         <div className="text-center mb-12">
           <h1 className="text-3xl font-bold mb-4">Giới Thiệu Về Chúng Tôi</h1>
           <p className="text-lg text-muted-foreground">
-            Facebook Search Tool - Công cụ tìm kiếm Facebook UUID và số điện thoại hàng đầu
+            Facebook Search Tool - Công cụ tìm kiếm Facebook và số điện thoại hàng đầu
           </p>
         </div>
 
         <div className="prose prose-base max-w-none mb-12">
           <p>
             Facebook Search Tool là một nền tảng công nghệ tiên tiến, chuyên cung cấp dịch vụ tìm kiếm và tra cứu thông
-            tin giữa Facebook UUID và số điện thoại. Chúng tôi cam kết mang đến cho người dùng một công cụ tìm kiếm
+            tin giữa Facebook và số điện thoại. Chúng tôi cam kết mang đến cho người dùng một công cụ tìm kiếm
             nhanh chóng, chính xác và bảo mật.
           </p>
 

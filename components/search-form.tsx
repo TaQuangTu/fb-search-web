@@ -131,7 +131,7 @@ export function SearchForm() {
                 className="flex items-center gap-3 py-4 px-8 text-base font-semibold data-[state=active]:bg-primary data-[state=active]:text-white data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:text-primary transition-all duration-300 rounded-xl"
               >
                 <Phone className="h-5 w-5" />
-                <span className="hidden sm:inline">Phone → UUID</span>
+                <span className="hidden sm:inline">Phone → Facebook</span>
                 <span className="sm:hidden">Phone</span>
               </TabsTrigger>
               <TabsTrigger 
@@ -139,7 +139,7 @@ export function SearchForm() {
                 className="flex items-center gap-3 py-4 px-8 text-base font-semibold data-[state=active]:bg-primary data-[state=active]:text-white data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:text-primary transition-all duration-300 rounded-xl"
               >
                 <User className="h-5 w-5" />
-                <span className="hidden sm:inline">UUID → Phone</span>
+                <span className="hidden sm:inline">Facebook → Phone</span>
                 <span className="sm:hidden">UUID</span>
               </TabsTrigger>
             </TabsList>
@@ -219,7 +219,7 @@ export function SearchForm() {
                                     rel="noopener noreferrer"
                                     className="font-mono text-base font-semibold text-primary hover:text-blue-700 hover:underline"
                                   >
-                                    {getFacebookUrl(result.fbuid)}
+                                    {result.fbuid}
                                   </a>
                                 </div>
                               </div>
