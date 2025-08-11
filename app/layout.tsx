@@ -57,6 +57,7 @@ export default function RootLayout({
       <head>
         <link rel="canonical" href="https://fbsearch.com" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4935991631349621" crossOrigin="anonymous"></script>
       </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
