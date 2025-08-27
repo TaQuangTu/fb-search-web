@@ -9,7 +9,7 @@ interface SearchResult {
 
 const API_BASE_URL = process.env.API_BASE_URL || "http://0.0.0.0:8000"
 
-export async function searchByPhone(phone: string): Promise<SearchResult[]> {
+export async function searchByPhone(phone: string, token: string): Promise<SearchResult[]> {
   try {
     const response = await fetch(`${API_BASE_URL}/find-fb/`, {
       method: "POST",
@@ -17,7 +17,7 @@ export async function searchByPhone(phone: string): Promise<SearchResult[]> {
         "Content-Type": "application/json",
         accept: "application/json",
       },
-      body: JSON.stringify({ phone }),
+      body: JSON.stringify({ phone, token }),
     })
 
     if (!response.ok) {
@@ -32,7 +32,7 @@ export async function searchByPhone(phone: string): Promise<SearchResult[]> {
   }
 }
 
-export async function searchByUUID(fbuid: string): Promise<SearchResult[]> {
+export async function searchByUUID(fbuid: string, token: string): Promise<SearchResult[]> {
   try {
     const response = await fetch(`${API_BASE_URL}/find-phone/`, {
       method: "POST",
@@ -40,7 +40,7 @@ export async function searchByUUID(fbuid: string): Promise<SearchResult[]> {
         "Content-Type": "application/json",
         accept: "application/json",
       },
-      body: JSON.stringify({ fbuid }),
+      body: JSON.stringify({ fbuid, token }),
     })
 
     if (!response.ok) {

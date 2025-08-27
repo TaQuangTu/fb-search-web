@@ -1,6 +1,6 @@
 "use client"
-
-import { useState } from "react"
+import { Turnstile } from '@marsidev/react-turnstile'
+import { useState, useRef } from "react"  // modify existing import
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -27,7 +27,20 @@ export function SearchForm() {
   const [isPhoneLoading, setIsPhoneLoading] = useState(false)
   const [isUuidLoading, setIsUuidLoading] = useState(false)
 
+  const [phoneToken, setPhoneToken] = useState<string | null>(null)
+  const [uuidToken, setUuidToken] = useState<string | null>(null)
+  const phoneTurnstileRef = useRef(null)
+  const uuidTurnstileRef = useRef(null)
+
   const handlePhoneSearch = async () => {
+    if (!phoneToken) {
+      toast({
+        title: "⚠️ " + t("search.error.verify"),
+        description: t("search.error.verify_desc"),
+        variant: "destructive",
+      })
+      return
+    }
     if (!phoneQuery.trim()) {
       toast({
         title: "⚠️ " + t("search.error.empty_phone"),
@@ -39,7 +52,7 @@ export function SearchForm() {
 
     setIsPhoneLoading(true)
     try {
-      const results = await searchByPhone(phoneQuery)
+      const results = await searchByPhone(phoneQuery, phoneToken)
       setPhoneResults(results)
       if (results.length === 0) {
         toast({
@@ -64,6 +77,14 @@ export function SearchForm() {
   }
 
   const handleUuidSearch = async () => {
+    if (!uuidToken) {
+      toast({
+        title: "⚠️ " + t("search.error.verify"),
+        description: t("search.error.verify_desc"),
+        variant: "destructive",
+      })
+      return
+    }
     if (!uuidQuery.trim()) {
       toast({
         title: "⚠️ " + t("search.error.empty_uuid"),
@@ -75,7 +96,7 @@ export function SearchForm() {
 
     setIsUuidLoading(true)
     try {
-      const results = await searchByUUID(uuidQuery)
+      const results = await searchByUUID(uuidQuery, uuidToken)
       setUuidResults(results)
       if (results.length === 0) {
         toast({
@@ -98,7 +119,13 @@ export function SearchForm() {
       setIsUuidLoading(false)
     }
   }
+  const handlePhoneVerify = (token: string) => {
+    setPhoneToken(token)
+  }
 
+  const handleUuidVerify = (token: string) => {
+    setUuidToken(token)
+  }
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleString("vi-VN")
   }
@@ -126,16 +153,16 @@ export function SearchForm() {
         <div className="max-w-5xl mx-auto">
           <Tabs defaultValue="phone" className="w-full">
             <TabsList className="grid w-full grid-cols-2 mb-8 bg-white shadow-lg p-2 h-auto">
-              <TabsTrigger 
-                value="phone" 
+              <TabsTrigger
+                value="phone"
                 className="flex items-center gap-3 py-4 px-8 text-base font-semibold data-[state=active]:bg-primary data-[state=active]:text-white data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:text-primary transition-all duration-300 rounded-xl"
               >
                 <Phone className="h-5 w-5" />
                 <span className="hidden sm:inline">Phone → Facebook</span>
                 <span className="sm:hidden">Phone</span>
               </TabsTrigger>
-              <TabsTrigger 
-                value="uuid" 
+              <TabsTrigger
+                value="uuid"
                 className="flex items-center gap-3 py-4 px-8 text-base font-semibold data-[state=active]:bg-primary data-[state=active]:text-white data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:text-primary transition-all duration-300 rounded-xl"
               >
                 <User className="h-5 w-5" />
@@ -173,19 +200,30 @@ export function SearchForm() {
                       />
                       <Phone className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                     </div>
-                    <Button 
-                      onClick={handlePhoneSearch} 
-                      disabled={isPhoneLoading}
-                      className="bg-gradient-to-r from-primary to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-0 text-base h-14"
-                    >
-                      {isPhoneLoading ? (
-                        <Loader2 className="h-5 w-5 animate-spin mr-2" />
-                      ) : (
-                        <Search className="h-5 w-5 mr-2" />
-                      )}
-                      {isPhoneLoading ? t("search.loading") : t("search.button")}
-                      {!isPhoneLoading && <ArrowRight className="h-5 w-5 ml-2" />}
-                    </Button>
+                    <div className="flex flex-col gap-4">
+                      <Turnstile
+                        ref={phoneTurnstileRef}
+                        siteKey="0x4AAAAAABnnGORBgSoZqW4U" // Replace with your Turnstile site key
+                        onSuccess={handlePhoneVerify}
+                        options={{
+                          theme: 'light',
+                          size: 'normal'
+                        }}
+                      />
+                      <Button
+                        onClick={handlePhoneSearch}
+                        disabled={isPhoneLoading || !phoneToken}
+                        className="bg-gradient-to-r from-primary to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-0 text-base h-14"
+                      >
+                        {isPhoneLoading ? (
+                          <Loader2 className="h-5 w-5 animate-spin mr-2" />
+                        ) : (
+                          <Search className="h-5 w-5 mr-2" />
+                        )}
+                        {isPhoneLoading ? t("search.loading") : t("search.button")}
+                        {!isPhoneLoading && <ArrowRight className="h-5 w-5 ml-2" />}
+                      </Button>
+                    </div>
                   </div>
 
                   {phoneResults.length > 0 && (
@@ -213,7 +251,7 @@ export function SearchForm() {
                                 </div>
                                 <div>
                                   <div className="text-sm text-gray-500 mb-1">{t("search.labels.profile")}</div>
-                                  <a 
+                                  <a
                                     href={getFacebookUrl(result.fbuid)}
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -279,19 +317,30 @@ export function SearchForm() {
                       />
                       <User className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                     </div>
-                    <Button 
-                      onClick={handleUuidSearch} 
-                      disabled={isUuidLoading}
-                      className="bg-gradient-to-r from-primary to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-0 text-base h-14"
-                    >
-                      {isUuidLoading ? (
-                        <Loader2 className="h-5 w-5 animate-spin mr-2" />
-                      ) : (
-                        <Search className="h-5 w-5 mr-2" />
-                      )}
-                      {isUuidLoading ? t("search.loading") : t("search.button")}
-                      {!isUuidLoading && <ArrowRight className="h-5 w-5 ml-2" />}
-                    </Button>
+                    <div className="flex flex-col gap-4">
+                      <Turnstile
+                        ref={uuidTurnstileRef}
+                        siteKey="0x4AAAAAABnnGORBgSoZqW4U" // Replace with your Turnstile site key
+                        onSuccess={handleUuidVerify}
+                        options={{
+                          theme: 'light',
+                          size: 'normal'
+                        }}
+                      />
+                      <Button
+                        onClick={handleUuidSearch}
+                        disabled={isUuidLoading || !uuidToken}
+                        className="bg-gradient-to-r from-primary to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-0 text-base h-14"
+                      >
+                        {isUuidLoading ? (
+                          <Loader2 className="h-5 w-5 animate-spin mr-2" />
+                        ) : (
+                          <Search className="h-5 w-5 mr-2" />
+                        )}
+                        {isUuidLoading ? t("search.loading") : t("search.button")}
+                        {!isUuidLoading && <ArrowRight className="h-5 w-5 ml-2" />}
+                      </Button>
+                    </div>
                   </div>
 
                   {uuidResults.length > 0 && (
@@ -310,7 +359,7 @@ export function SearchForm() {
                                 </div>
                                 <div>
                                   <div className="text-sm text-gray-500 mb-1">{t("search.labels.profile")}</div>
-                                  <a 
+                                  <a
                                     href={getFacebookUrl(result.fbuid)}
                                     target="_blank"
                                     rel="noopener noreferrer"

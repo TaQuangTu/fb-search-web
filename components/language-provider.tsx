@@ -47,6 +47,8 @@ const translations = {
     "search.error.empty_phone": "Vui lòng nhập số điện thoại",
     "search.error.empty_uuid": "Vui lòng nhập Facebook UUID",
     "search.error.not_found": "Không có kết quả nào cho thông tin này",
+    "search.error.verify": "Yêu cầu xác minh",
+    "search.error.verify_desc": "Vui lòng hoàn thành xác minh trước khi tìm kiếm",
     "search.error.general": "Có lỗi xảy ra khi tìm kiếm",
     "search.success": "Thành công",
     "search.success_desc": "Tìm thấy {count} kết quả",
@@ -54,6 +56,7 @@ const translations = {
     "search.labels.uuid": "Facebook UUID",
     "search.labels.profile": "Facebook URL",
     "search.labels.time": "Thời gian",
+    
 
     // Features
     "features.title": "Tính Năng Nổi Bật",
@@ -151,6 +154,8 @@ const translations = {
     "search.error.empty_uuid": "Please enter Facebook UUID",
     "search.error.not_found": "No results found for this information",
     "search.error.general": "An error occurred while searching",
+    "search.error.verify": "Verification Required",
+    "search.error.verify_desc": "Please complete the verification challenge before searching",
     "search.success": "Success",
     "search.success_desc": "Found {count} results",
     "search.labels.phone": "Phone Number",
