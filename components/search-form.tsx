@@ -189,18 +189,36 @@ export function SearchForm() {
                   </div>
                 </div>
                 <CardContent className="p-8 space-y-6">
-                  <div className="flex gap-4">
-                    <div className="flex-1 relative">
+                  <div className="flex flex-col gap-6 max-w-md mx-auto">
+                    {/* Text Input */}
+                    <div className="relative">
                       <Input
                         placeholder={t("search.phone.placeholder")}
                         value={phoneQuery}
                         onChange={(e) => setPhoneQuery(e.target.value)}
                         onKeyPress={(e) => e.key === "Enter" && handlePhoneSearch()}
-                        className="h-14 text-base pl-12 border-2 border-gray-200 focus:border-primary transition-colors duration-300 rounded-xl"
+                        className="h-14 text-base pl-12 border-2 border-gray-200 focus:border-primary transition-colors duration-300 rounded-xl w-full"
                       />
                       <Phone className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                     </div>
-                    <div className="flex flex-col gap-4">
+                    
+                    {/* Search Button */}
+                    <Button
+                      onClick={handlePhoneSearch}
+                      disabled={isPhoneLoading || !phoneToken}
+                      className="bg-gradient-to-r from-primary to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-0 text-base h-14 w-full"
+                    >
+                      {isPhoneLoading ? (
+                        <Loader2 className="h-5 w-5 animate-spin mr-2" />
+                      ) : (
+                        <Search className="h-5 w-5 mr-2" />
+                      )}
+                      {isPhoneLoading ? t("search.loading") : t("search.button")}
+                      {!isPhoneLoading && <ArrowRight className="h-5 w-5 ml-2" />}
+                    </Button>
+                    
+                    {/* Cloudflare Turnstile */}
+                    <div className="flex justify-center">
                       <Turnstile
                         ref={phoneTurnstileRef}
                         siteKey="0x4AAAAAABnnGORBgSoZqW4U" // Replace with your Turnstile site key
@@ -210,19 +228,6 @@ export function SearchForm() {
                           size: 'normal'
                         }}
                       />
-                      <Button
-                        onClick={handlePhoneSearch}
-                        disabled={isPhoneLoading || !phoneToken}
-                        className="bg-gradient-to-r from-primary to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-0 text-base h-14"
-                      >
-                        {isPhoneLoading ? (
-                          <Loader2 className="h-5 w-5 animate-spin mr-2" />
-                        ) : (
-                          <Search className="h-5 w-5 mr-2" />
-                        )}
-                        {isPhoneLoading ? t("search.loading") : t("search.button")}
-                        {!isPhoneLoading && <ArrowRight className="h-5 w-5 ml-2" />}
-                      </Button>
                     </div>
                   </div>
 
@@ -306,18 +311,36 @@ export function SearchForm() {
                   </div>
                 </div>
                 <CardContent className="p-8 space-y-6">
-                  <div className="flex gap-4">
-                    <div className="flex-1 relative">
+                  <div className="flex flex-col gap-6 max-w-md mx-auto">
+                    {/* Text Input */}
+                    <div className="relative">
                       <Input
                         placeholder={t("search.uuid.placeholder")}
                         value={uuidQuery}
                         onChange={(e) => setUuidQuery(e.target.value)}
                         onKeyPress={(e) => e.key === "Enter" && handleUuidSearch()}
-                        className="h-14 text-base pl-12 border-2 border-gray-200 focus:border-primary transition-colors duration-300 rounded-xl"
+                        className="h-14 text-base pl-12 border-2 border-gray-200 focus:border-primary transition-colors duration-300 rounded-xl w-full"
                       />
                       <User className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                     </div>
-                    <div className="flex flex-col gap-4">
+                    
+                    {/* Search Button */}
+                    <Button
+                      onClick={handleUuidSearch}
+                      disabled={isUuidLoading || !uuidToken}
+                      className="bg-gradient-to-r from-primary to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-0 text-base h-14 w-full"
+                    >
+                      {isUuidLoading ? (
+                        <Loader2 className="h-5 w-5 animate-spin mr-2" />
+                      ) : (
+                        <Search className="h-5 w-5 mr-2" />
+                      )}
+                      {isUuidLoading ? t("search.loading") : t("search.button")}
+                      {!isUuidLoading && <ArrowRight className="h-5 w-5 ml-2" />}
+                    </Button>
+                    
+                    {/* Cloudflare Turnstile */}
+                    <div className="flex justify-center">
                       <Turnstile
                         ref={uuidTurnstileRef}
                         siteKey="0x4AAAAAABnnGORBgSoZqW4U" // Replace with your Turnstile site key
@@ -327,19 +350,6 @@ export function SearchForm() {
                           size: 'normal'
                         }}
                       />
-                      <Button
-                        onClick={handleUuidSearch}
-                        disabled={isUuidLoading || !uuidToken}
-                        className="bg-gradient-to-r from-primary to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-0 text-base h-14"
-                      >
-                        {isUuidLoading ? (
-                          <Loader2 className="h-5 w-5 animate-spin mr-2" />
-                        ) : (
-                          <Search className="h-5 w-5 mr-2" />
-                        )}
-                        {isUuidLoading ? t("search.loading") : t("search.button")}
-                        {!isUuidLoading && <ArrowRight className="h-5 w-5 ml-2" />}
-                      </Button>
                     </div>
                   </div>
 
