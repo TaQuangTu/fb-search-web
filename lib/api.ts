@@ -17,7 +17,7 @@ export async function searchByPhone(phone: string, token: string): Promise<Searc
         "Content-Type": "application/json",
         accept: "application/json",
       },
-      body: JSON.stringify({ phone, token }),
+      body: JSON.stringify({ phone, turnstileToken: token }),
     })
 
     if (!response.ok) {
@@ -40,7 +40,7 @@ export async function searchByUUID(fbuid: string, token: string): Promise<Search
         "Content-Type": "application/json",
         accept: "application/json",
       },
-      body: JSON.stringify({ fbuid, token }),
+      body: JSON.stringify({ fbuid, turnstileToken: token }),
     })
 
     if (!response.ok) {
